@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #120720;
+}
+
+/* DEVELOPER */
+.app-wrapper {
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.creator {
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 8px;
+  color: #0ef;
+}
+
+.developer-contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  border-radius: 1000px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 4px solid #0ef;
+}
+
+.links-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+}
+
+.links-wrapper a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #0ef;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 8px;
+}
+/* END DEVELOPER */
+
+/* COUNTERS */
+.app-title {
+  color: #0ef;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.buttons-wrapper {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px;
+  width: 10%;
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 1000px;
+  outline: none;
+}
+
+#minus-btn,
+#plus-btn,
+#display {
+  color: #fff;
+  text-align: center;
+}
+
+#minus-btn {
+  background-color: rgba(255, 0, 0, 0.577);
+}
+
+#minus-btn:hover {
+  background-color: rgba(255, 0, 0, 0.407);
+}
+
+#plus-btn {
+  background-color: green;
+}
+
+#plus-btn:hover {
+  background-color: rgba(0, 128, 0, 0.708);
+}
+
+#display-btn {
+  background-color: rgba(255, 0, 255, 0.311);
+  color: chartreuse;
+  cursor: no-drop;
+  outline-color: rgba(255, 0, 255, 0.311);
+}
