@@ -4,6 +4,7 @@ I will be adding new features every week to make this app more robust by persist
 
 > [!NOTE]
 > I will implement local storage in my app in the subsequent commits.
+> Now the local storage is well implemented
 
 ```
 TECHNOLOGY ⚙
