@@ -1,50 +1,47 @@
-
-//Grab DOM elements.
-const plusBtn = document.getElementById("plus-btn");
-const minusBtn = document.getElementById("minus-btn");
-const display = document.getElementById("display-btn");
-
-//Store static values into constants.
 const INCREMENT_LIMIT = 10;
 const DECREMENT_LIMIT = 0;
+const COUNTER_KEY = "counter";
+const INITIAL_COUNTER_VALUE = 0;
+const plusButton = document.querySelector("#plus-btn");
+const minusButton = document.querySelector("#minus-btn");
+const counterDisplay = document.querySelector("#display-btn");
 
-//Attach click Events to the listeners.
-//This means, when a plus button is clicked or minus button is clicked, the increment and decrement will be executed respectively
-plusBtn.addEventListener("click", increment);
-minusBtn.addEventListener("click", decrement);
+let counter;
+initializeCounter();
 
-//Declare and initialze the counter to zero.
-let counter = 0;
-
-
-//This function will icrement the counter until INCREMENT_LIMIT is reached.
-function increment() {
+plusButton.addEventListener("click", () => {
   if (counter === INCREMENT_LIMIT) {
-    displayWarning();
     return;
   }
   counter++;
+  storeCounter(COUNTER_KEY, counter);
   updateDisplay();
-}
+});
 
-//This function will icrement the counter until  DECREMENT_LIMIT is reached.
-function decrement() {
+minusButton.addEventListener("click", () => {
   if (counter === DECREMENT_LIMIT) {
-    displayWarning();
     return;
   }
   counter--;
+  storeCounter(COUNTER_KEY, counter);
   updateDisplay();
-}
+});
 
-//This function will update the display everytime the decrement or increment button is clicked.
 function updateDisplay() {
-  display.innerHTML = counter;
+  counterDisplay.innerHTML = getStoredCounter(COUNTER_KEY);
 }
 
-//This function is responsible for displaying the STOP message on the display button with red bgc and text of white.
-function displayWarning() {
-  display.innerHTML = "STOP!";
-  display.style.backgroundColor = "red";
-  display.style.color = "white";
+function storeCounter(key, value) {
+  localStorage.setItem(key, value);
+}
+
+function getStoredCounter(key) {
+  return localStorage.getItem(key);
+}
+
+function initializeCounter() {
+  //Set counter variable to the value from the localstorage or if not present set to 0
+  counter = parseInt(getStoredCounter(COUNTER_KEY)) || INITIAL_COUNTER_VALUE;
+  //Update the display when the page reloads or loads.
+  updateDisplay();
 }
